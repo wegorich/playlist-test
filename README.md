@@ -1,5 +1,4 @@
-# playlist-test
-Front End Task: My Music
+# Front End Task: My Music
 
 demo
 https://wegorelax-playlist-test.herokuapp.com/
