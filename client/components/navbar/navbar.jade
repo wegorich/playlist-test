@@ -4,7 +4,7 @@ div.navbar.navbar-default.navbar-static-top.animated.long.fadeInDownBig
       a.navbar-brand(href='/') App
     form.navbar-form.navbar-right
       .btn-group(role="group")
-        a.btn.btn-default(ng-repeat="item in ::themes", ng-click="params.theme = item", ng-class="{active: item == params.theme}") {{item}}
+        a.btn.btn-default(ng-repeat="item in ::themes", ng-click="params.theme = item.val", ng-class="{active: item.val == params.theme}") {{item.name}}
 
     div
       ul.nav.navbar-nav.navbar-left
