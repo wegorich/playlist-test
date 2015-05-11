@@ -1,0 +1,35 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.container
+  .row
+    .col-lg-12
+      h1 Playlist:
+      section.no-data(ng-hide="playlist.length")
+        | Loading... {{error}}
+      table.table.table-striped.animated.slideInUp(ng-if="playlist.length")
+        tr
+          th
+            a(ng-click="sortBy('Lastplayed')") Last played
+          th.hidden-xs
+            a(ng-click="sortBy('Artist')") Artist
+          th
+            a(ng-click="sortBy('Name')") Name
+          th.hidden-xs
+            a(ng-click="sortBy('Genre')") Genre
+          th.hidden-xs
+            a(ng-click="sortBy('Stars')") Stars
+
+        tr(ng-class="{active: selected == item}", ng-repeat='item in playlist | orderBy: params.playlist.sortField', ng-click="showDetails(item)")
+          td {{item.Lastplayed}}
+          td.hidden-xs {{item.Artist}}
+          td {{item.Name}}
+          td.hidden-xs {{item.Genre}}
+          td.hidden-xs {{item.Stars}}
+
+  .row
+    div(ui-view="")
+
+footer.footer(ng-show='params.theme')
+  .container
+    p
+      | &copy; wegorelax

@@ -1,0 +1,22 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.container
+  header#banner.hero-unit
+    .container
+      h1 Your Music Statistics
+
+  .row
+    .col-lg-12
+      section.no-data(ng-hide="playlist.length")
+        | Loading... {{error}}
+      .row
+        .col-lg-6.col-md-6.col-sm-6
+          section#genres
+        .col-lg-6.col-md-6.col-sm-6
+          section#stars
+
+
+footer.footer(ng-show='params.theme')
+  .container
+    p
+      | &copy; wegorelax

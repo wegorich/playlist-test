@@ -1,0 +1,15 @@
+div.navbar.navbar-default.navbar-static-top.animated.long.fadeInDownBig
+  div.container
+    div.navbar-header
+      a.navbar-brand(href='/') App
+    form.navbar-form.navbar-right
+      .btn-group(role="group")
+        a.btn.btn-default(ng-repeat="item in ::themes", ng-click="params.theme = item", ng-class="{active: item == params.theme}") {{item}}
+
+    div
+      ul.nav.navbar-nav.navbar-left
+        li(ui-sref-active="active")
+          a(ui-sref="playlist") Playlist
+
+        li(ui-sref-active="active")
+          a(ui-sref="stats") Stats

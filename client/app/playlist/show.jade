@@ -1,0 +1,19 @@
+section(ng-if="item")
+  .container.container-fluid.animated.fadeInUp
+    .row
+      .col-md-4.col-sm-6.col-lg-3
+        h1 {{::item.Genre}}
+      .col-md-8.col-sm-6.col-lg-9
+        h2 {{::item.Name}}
+    .row
+      .col-md-4.col-sm-6.col-lg-3
+        img#show-img(src="http://lorempixel.com/264/264/nightlife/{{::item.Name}}")
+      .col-md-8.col-sm-6.col-lg-9
+        form
+          .form-group
+            label(for='comment') Comment
+            textarea#comment.form-control(placeholder='Enter comment', ng-model="$storage[item.Name]")
+          a.btn.btn-info.twitter-share-button(ng-click='tweet()')
+            i.fa-twitter
+            | Tweet
+
